@@ -1,11 +1,11 @@
 # swagger_client.PWSObservationsApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/ShaneEaston/Wunderground_PWS_api/1.0.0*
+All URIs are relative to *https://api.weather.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**observations_all_one_day**](PWSObservationsApi.md#observations_all_one_day) | **GET** /observations/all/1day | 
-[**observations_current**](PWSObservationsApi.md#observations_current) | **GET** /observations/current | 
+[**observations_all_one_day**](PWSObservationsApi.md#observations_all_one_day) | **GET** /v2/pws/observations/all/1day | 
+[**observations_current**](PWSObservationsApi.md#observations_current) | **GET** /v2/pws/observations/current | 
 
 
 # **observations_all_one_day**

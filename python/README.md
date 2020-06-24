@@ -74,12 +74,12 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/ShaneEaston/Wunderground_PWS_api/1.0.0*
+All URIs are relative to *https://api.weather.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PWSObservationsApi* | [**observations_all_one_day**](docs/PWSObservationsApi.md#observations_all_one_day) | **GET** /observations/all/1day | 
-*PWSObservationsApi* | [**observations_current**](docs/PWSObservationsApi.md#observations_current) | **GET** /observations/current | 
+*PWSObservationsApi* | [**observations_all_one_day**](docs/PWSObservationsApi.md#observations_all_one_day) | **GET** /v2/pws/observations/all/1day | 
+*PWSObservationsApi* | [**observations_current**](docs/PWSObservationsApi.md#observations_current) | **GET** /v2/pws/observations/current | 
 
 
 ## Documentation For Models

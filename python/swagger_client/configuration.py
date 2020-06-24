@@ -40,7 +40,7 @@ class Configuration(object):
             return
 
         # Default Base url
-        self.host = "https://virtserver.swaggerhub.com/ShaneEaston/Wunderground_PWS_api/1.0.0"
+        self.host = "https://api.weather.com"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 

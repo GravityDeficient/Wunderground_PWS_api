@@ -133,7 +133,7 @@ class PWSObservationsApi(object):
         auth_settings = ['APIKeyQueryParam']  # noqa: E501
 
         return self.api_client.call_api(
-            '/observations/all/1day', 'GET',
+            '/v2/pws/observations/all/1day', 'GET',
             path_params,
             query_params,
             header_params,
@@ -248,7 +248,7 @@ class PWSObservationsApi(object):
         auth_settings = ['APIKeyQueryParam']  # noqa: E501
 
         return self.api_client.call_api(
-            '/observations/current', 'GET',
+            '/v2/pws/observations/current', 'GET',
             path_params,
             query_params,
             header_params,
