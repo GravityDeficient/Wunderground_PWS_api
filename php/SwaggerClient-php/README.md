@@ -20,11 +20,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com//.git"
+      "url": "https://github.com/GravityDeficient/Wunderground_PWS_api.git"
     }
   ],
   "require": {
-    "/": "*@dev"
+    "gravitydeficient/wundergrount-pws-api": "*@dev"
   }
 }
 ```
