@@ -30,20 +30,20 @@
   var instance;
 
   describe('(package)', function() {
-    describe('InlineResponse200', function() {
+    describe('InlineResponse2002', function() {
       beforeEach(function() {
-        instance = new TheWeatherCompanyPwsApi.InlineResponse200();
+        instance = new TheWeatherCompanyPwsApi.InlineResponse2002();
       });
 
-      it('should create an instance of InlineResponse200', function() {
-        // TODO: update the code to test InlineResponse200
-        expect(instance).to.be.a(TheWeatherCompanyPwsApi.InlineResponse200);
+      it('should create an instance of InlineResponse2002', function() {
+        // TODO: update the code to test InlineResponse2002
+        expect(instance).to.be.a(TheWeatherCompanyPwsApi.InlineResponse2002);
       });
 
-      it('should have the property observations (base name: "observations")', function() {
-        // TODO: update the code to test the property observations
-        expect(instance).to.have.property('observations');
-        // expect(instance.observations).to.be(expectedValueLiteral);
+      it('should have the property summaries (base name: "summaries")', function() {
+        // TODO: update the code to test the property summaries
+        expect(instance).to.have.property('summaries');
+        // expect(instance.summaries).to.be(expectedValueLiteral);
       });
 
     });

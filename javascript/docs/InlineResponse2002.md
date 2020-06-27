@@ -1,8 +1,8 @@
-# TheWeatherCompanyPwsApi.InlineResponse2001
+# TheWeatherCompanyPwsApi.InlineResponse2002
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**observations** | [**Summaries**](Summaries.md) |  | [optional] 
+**summaries** | [**Summaries**](Summaries.md) |  | [optional] 
 
 

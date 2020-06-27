@@ -1,6 +1,6 @@
 /*
  * The Weather Company PWS API
- * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 3 availible endpoints in observations domain portfolio.
+ * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 4 availible endpoints in observations domain portfolio.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -54,16 +54,16 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('summaries'))
-        obj.summaries = Summaries.constructFromObject(data['summaries']);
+      if (data.hasOwnProperty('observations'))
+        obj.observations = Summaries.constructFromObject(data['observations']);
     }
     return obj;
   }
 
   /**
-   * @member {module:model/Summaries} summaries
+   * @member {module:model/Summaries} observations
    */
-  exports.prototype.summaries = undefined;
+  exports.prototype.observations = undefined;
 
   return exports;
 

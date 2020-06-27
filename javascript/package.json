@@ -1,7 +1,7 @@
 {
   "name": "the_weather_company_pws_api",
   "version": "1.0.0",
-  "description": "APIs_for_Personal_Weather_Station_Contributors__This_is_an_unofficial_Swagger_2_0_document_for_working_with_The_Weather_Company__Weather_Underground_API_data__At_this_time__24_06_2020_this_document_only_covers_3_availible_endpoints_in_observations_domain_portfolio_",
+  "description": "APIs_for_Personal_Weather_Station_Contributors__This_is_an_unofficial_Swagger_2_0_document_for_working_with_The_Weather_Company__Weather_Underground_API_data__At_this_time__24_06_2020_this_document_only_covers_4_availible_endpoints_in_observations_domain_portfolio_",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

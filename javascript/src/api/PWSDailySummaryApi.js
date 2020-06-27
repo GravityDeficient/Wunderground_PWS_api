@@ -1,6 +1,6 @@
 /*
  * The Weather Company PWS API
- * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 3 availible endpoints in observations domain portfolio.
+ * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 4 availible endpoints in observations domain portfolio.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2001'], factory);
+    define(['ApiClient', 'model/InlineResponse2002'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2001'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2002'));
   } else {
     // Browser globals (root is window)
     if (!root.TheWeatherCompanyPwsApi) {
       root.TheWeatherCompanyPwsApi = {};
     }
-    root.TheWeatherCompanyPwsApi.PWSDailySummaryApi = factory(root.TheWeatherCompanyPwsApi.ApiClient, root.TheWeatherCompanyPwsApi.InlineResponse2001);
+    root.TheWeatherCompanyPwsApi.PWSDailySummaryApi = factory(root.TheWeatherCompanyPwsApi.ApiClient, root.TheWeatherCompanyPwsApi.InlineResponse2002);
   }
-}(this, function(ApiClient, InlineResponse2001) {
+}(this, function(ApiClient, InlineResponse2002) {
   'use strict';
 
   /**
@@ -51,7 +51,7 @@
      * Callback function to receive the result of the dailySummary7Day operation.
      * @callback module:api/PWSDailySummaryApi~dailySummary7DayCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -63,7 +63,7 @@
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
      * @param {module:api/PWSDailySummaryApi~dailySummary7DayCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     this.dailySummary7Day = function(stationId, units, format, opts, callback) {
       opts = opts || {};
@@ -103,7 +103,7 @@
       var authNames = ['APIKeyQueryParam'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
         '/v2/pws/dailysummary/7day', 'GET',

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="dailySummary7Day"></a>
 # **dailySummary7Day**
-> InlineResponse2001 dailySummary7Day(stationId, units, format, opts)
+> InlineResponse2002 dailySummary7Day(stationId, units, format, opts)
 
 
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 /*
  * The Weather Company PWS API
- * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 3 availible endpoints in observations domain portfolio.
+ * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 4 availible endpoints in observations domain portfolio.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -51,7 +51,7 @@
               return;
             }
             // TODO: update response assertions
-            expect(data).to.be.a(TheWeatherCompanyPwsApi.InlineResponse2001);
+            expect(data).to.be.a(TheWeatherCompanyPwsApi.InlineResponse2002);
             expect(data.summaries).to.be.a(TheWeatherCompanyPwsApi.Summaries);
     
             done();

@@ -1,6 +1,6 @@
 /*
  * The Weather Company PWS API
- * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 3 availible endpoints in observations domain portfolio.
+ * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 4 availible endpoints in observations domain portfolio.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200'], factory);
+    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse200'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'));
   } else {
     // Browser globals (root is window)
     if (!root.TheWeatherCompanyPwsApi) {
       root.TheWeatherCompanyPwsApi = {};
     }
-    root.TheWeatherCompanyPwsApi.PWSObservationsApi = factory(root.TheWeatherCompanyPwsApi.ApiClient, root.TheWeatherCompanyPwsApi.InlineResponse200);
+    root.TheWeatherCompanyPwsApi.PWSObservationsApi = factory(root.TheWeatherCompanyPwsApi.ApiClient, root.TheWeatherCompanyPwsApi.InlineResponse200, root.TheWeatherCompanyPwsApi.InlineResponse2001);
   }
-}(this, function(ApiClient, InlineResponse200) {
+}(this, function(ApiClient, InlineResponse200, InlineResponse2001) {
   'use strict';
 
   /**
@@ -172,6 +172,71 @@
 
       return this.apiClient.callApi(
         '/v2/pws/observations/current', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the observationsHourly7Day operation.
+     * @callback module:api/PWSObservationsApi~observationsHourly7DayCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Personal Weather Station (PWS) Daily Summary Historical Observations returns the daily summary of daily observations for each day's observations report.
+     * @param {String} stationId The PWS station ID
+     * @param {module:model/String} units Unit type
+     * @param {module:model/String} format 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
+     * @param {module:api/PWSObservationsApi~observationsHourly7DayCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2001}
+     */
+    this.observationsHourly7Day = function(stationId, units, format, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'stationId' is set
+      if (stationId === undefined || stationId === null) {
+        throw new Error("Missing the required parameter 'stationId' when calling observationsHourly7Day");
+      }
+
+      // verify the required parameter 'units' is set
+      if (units === undefined || units === null) {
+        throw new Error("Missing the required parameter 'units' when calling observationsHourly7Day");
+      }
+
+      // verify the required parameter 'format' is set
+      if (format === undefined || format === null) {
+        throw new Error("Missing the required parameter 'format' when calling observationsHourly7Day");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'stationId': stationId,
+        'units': units,
+        'numericPrecision': opts['numericPrecision'],
+        'format': format,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['APIKeyQueryParam'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse2001;
+
+      return this.apiClient.callApi(
+        '/v2/pws/observations/hourly/7day', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
