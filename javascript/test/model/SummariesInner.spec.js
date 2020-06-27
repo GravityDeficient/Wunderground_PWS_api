@@ -30,20 +30,14 @@
   var instance;
 
   describe('(package)', function() {
-    describe('Observations', function() {
+    describe('SummariesInner', function() {
       beforeEach(function() {
-        instance = new TheWeatherCompanyPwsApi.Observations();
+        instance = new TheWeatherCompanyPwsApi.SummariesInner();
       });
 
-      it('should create an instance of Observations', function() {
-        // TODO: update the code to test Observations
-        expect(instance).to.be.a(TheWeatherCompanyPwsApi.Observations);
-      });
-
-      it('should have the property country (base name: "country")', function() {
-        // TODO: update the code to test the property country
-        expect(instance).to.have.property('country');
-        // expect(instance.country).to.be(expectedValueLiteral);
+      it('should create an instance of SummariesInner', function() {
+        // TODO: update the code to test SummariesInner
+        expect(instance).to.be.a(TheWeatherCompanyPwsApi.SummariesInner);
       });
 
       it('should have the property epoch (base name: "epoch")', function() {
@@ -52,10 +46,22 @@
         // expect(instance.epoch).to.be(expectedValueLiteral);
       });
 
-      it('should have the property humidity (base name: "humidity")', function() {
-        // TODO: update the code to test the property humidity
-        expect(instance).to.have.property('humidity');
-        // expect(instance.humidity).to.be(expectedValueLiteral);
+      it('should have the property humidityAvg (base name: "humidityAvg")', function() {
+        // TODO: update the code to test the property humidityAvg
+        expect(instance).to.have.property('humidityAvg');
+        // expect(instance.humidityAvg).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property humidityHigh (base name: "humidityHigh")', function() {
+        // TODO: update the code to test the property humidityHigh
+        expect(instance).to.have.property('humidityHigh');
+        // expect(instance.humidityHigh).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property humidityLow (base name: "humidityLow")', function() {
+        // TODO: update the code to test the property humidityLow
+        expect(instance).to.have.property('humidityLow');
+        // expect(instance.humidityLow).to.be(expectedValueLiteral);
       });
 
       it('should have the property lat (base name: "lat")', function() {
@@ -70,12 +76,6 @@
         // expect(instance.lon).to.be(expectedValueLiteral);
       });
 
-      it('should have the property neighborhood (base name: "neighborhood")', function() {
-        // TODO: update the code to test the property neighborhood
-        expect(instance).to.have.property('neighborhood');
-        // expect(instance.neighborhood).to.be(expectedValueLiteral);
-      });
-
       it('should have the property obsTimeLocal (base name: "obsTimeLocal")', function() {
         // TODO: update the code to test the property obsTimeLocal
         expect(instance).to.have.property('obsTimeLocal');
@@ -88,28 +88,10 @@
         // expect(instance.obsTimeUtc).to.be(expectedValueLiteral);
       });
 
-      it('should have the property qcStatus (base name: "qcStatus")', function() {
-        // TODO: update the code to test the property qcStatus
-        expect(instance).to.have.property('qcStatus');
-        // expect(instance.qcStatus).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property realtimeFrequency (base name: "realtimeFrequency")', function() {
-        // TODO: update the code to test the property realtimeFrequency
-        expect(instance).to.have.property('realtimeFrequency');
-        // expect(instance.realtimeFrequency).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property softwareType (base name: "softwareType")', function() {
-        // TODO: update the code to test the property softwareType
-        expect(instance).to.have.property('softwareType');
-        // expect(instance.softwareType).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property solarRadiation (base name: "solarRadiation")', function() {
-        // TODO: update the code to test the property solarRadiation
-        expect(instance).to.have.property('solarRadiation');
-        // expect(instance.solarRadiation).to.be(expectedValueLiteral);
+      it('should have the property solarRadiationHigh (base name: "solarRadiationHigh")', function() {
+        // TODO: update the code to test the property solarRadiationHigh
+        expect(instance).to.have.property('solarRadiationHigh');
+        // expect(instance.solarRadiationHigh).to.be(expectedValueLiteral);
       });
 
       it('should have the property stationID (base name: "stationID")', function() {
@@ -118,16 +100,28 @@
         // expect(instance.stationID).to.be(expectedValueLiteral);
       });
 
-      it('should have the property uv (base name: "uv")', function() {
-        // TODO: update the code to test the property uv
-        expect(instance).to.have.property('uv');
-        // expect(instance.uv).to.be(expectedValueLiteral);
+      it('should have the property tz (base name: "tz")', function() {
+        // TODO: update the code to test the property tz
+        expect(instance).to.have.property('tz');
+        // expect(instance.tz).to.be(expectedValueLiteral);
       });
 
-      it('should have the property winddir (base name: "winddir")', function() {
-        // TODO: update the code to test the property winddir
-        expect(instance).to.have.property('winddir');
-        // expect(instance.winddir).to.be(expectedValueLiteral);
+      it('should have the property uvHigh (base name: "uvHigh")', function() {
+        // TODO: update the code to test the property uvHigh
+        expect(instance).to.have.property('uvHigh');
+        // expect(instance.uvHigh).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property winddirAvg (base name: "winddirAvg")', function() {
+        // TODO: update the code to test the property winddirAvg
+        expect(instance).to.have.property('winddirAvg');
+        // expect(instance.winddirAvg).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property qcStatus (base name: "qcStatus")', function() {
+        // TODO: update the code to test the property qcStatus
+        expect(instance).to.have.property('qcStatus');
+        // expect(instance.qcStatus).to.be(expectedValueLiteral);
       });
 
       it('should have the property imperial (base name: "imperial")', function() {

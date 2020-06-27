@@ -1,6 +1,6 @@
 /*
  * The Weather Company PWS API
- * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (23-06-2020) this document only covers 2 availible endpoints in observations domain portfolio.
+ * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 3 availible endpoints in observations domain portfolio.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -16,16 +16,16 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200', 'model/Measures', 'model/Observations', 'api/PWSObservationsApi'], factory);
+    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/Measures', 'model/Observations', 'model/Summaries', 'model/SummariesInner', 'model/SummaryMeasures', 'api/PWSDailySummaryApi', 'api/PWSObservationsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/InlineResponse200'), require('./model/Measures'), require('./model/Observations'), require('./api/PWSObservationsApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/Measures'), require('./model/Observations'), require('./model/Summaries'), require('./model/SummariesInner'), require('./model/SummaryMeasures'), require('./api/PWSDailySummaryApi'), require('./api/PWSObservationsApi'));
   }
-}(function(ApiClient, InlineResponse200, Measures, Observations, PWSObservationsApi) {
+}(function(ApiClient, InlineResponse200, InlineResponse2001, Measures, Observations, Summaries, SummariesInner, SummaryMeasures, PWSDailySummaryApi, PWSObservationsApi) {
   'use strict';
 
   /**
-   * APIs_for_Personal_Weather_Station_Contributors__This_is_an_unofficial_Swagger_2_0_document_for_working_with_The_Weather_Company__Weather_Underground_API_data__At_this_time__23_06_2020_this_document_only_covers_2_availible_endpoints_in_observations_domain_portfolio_.<br>
+   * APIs_for_Personal_Weather_Station_Contributors__This_is_an_unofficial_Swagger_2_0_document_for_working_with_The_Weather_Company__Weather_Underground_API_data__At_this_time__24_06_2020_this_document_only_covers_3_availible_endpoints_in_observations_domain_portfolio_.<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -67,6 +67,11 @@
      */
     InlineResponse200: InlineResponse200,
     /**
+     * The InlineResponse2001 model constructor.
+     * @property {module:model/InlineResponse2001}
+     */
+    InlineResponse2001: InlineResponse2001,
+    /**
      * The Measures model constructor.
      * @property {module:model/Measures}
      */
@@ -76,6 +81,26 @@
      * @property {module:model/Observations}
      */
     Observations: Observations,
+    /**
+     * The Summaries model constructor.
+     * @property {module:model/Summaries}
+     */
+    Summaries: Summaries,
+    /**
+     * The SummariesInner model constructor.
+     * @property {module:model/SummariesInner}
+     */
+    SummariesInner: SummariesInner,
+    /**
+     * The SummaryMeasures model constructor.
+     * @property {module:model/SummaryMeasures}
+     */
+    SummaryMeasures: SummaryMeasures,
+    /**
+     * The PWSDailySummaryApi service constructor.
+     * @property {module:api/PWSDailySummaryApi}
+     */
+    PWSDailySummaryApi: PWSDailySummaryApi,
     /**
      * The PWSObservationsApi service constructor.
      * @property {module:api/PWSObservationsApi}

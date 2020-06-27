@@ -1,6 +1,6 @@
 /*
  * The Weather Company PWS API
- * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (23-06-2020) this document only covers 2 availible endpoints in observations domain portfolio.
+ * APIs for Personal Weather Station Contributors. This is an unofficial Swagger 2.0 document for working with The Weather Company (Weather Underground) API data. At this time (24-06-2020) this document only covers 3 availible endpoints in observations domain portfolio.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -46,9 +46,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://virtserver.swaggerhub.com/ShaneEaston/Wunderground_PWS_api/1.0.0
+     * @default https://api.weather.com
      */
-    this.basePath = 'https://virtserver.swaggerhub.com/ShaneEaston/Wunderground_PWS_api/1.0.0'.replace(/\/+$/, '');
+    this.basePath = 'https://api.weather.com'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
