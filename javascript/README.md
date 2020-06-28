@@ -50,11 +50,11 @@ command above from.
 #### git
 #
 If the library is hosted at a git repository, e.g.
-https://github.com/YOUR_USERNAME/the_weather_company_pws_api
+https://github.com/GravityDeficient/the_weather_company_pws_api
 then install it via:
 
 ```shell
-    npm install YOUR_USERNAME/the_weather_company_pws_api --save
+    npm install GravityDeficient/the_weather_company_pws_api --save
 ```
 
 ### For browser
