@@ -35,9 +35,9 @@
 
   describe('(package)', function() {
     describe('PWSObservationsApi', function() {
-      describe('observationsAllOneDay', function() {
-        it('should call observationsAllOneDay successfully', function(done) {
-          // TODO: uncomment, update parameter values for observationsAllOneDay call and complete the assertions
+      describe('v2PwsObservationsAll1day', function() {
+        it('should call v2PwsObservationsAll1day successfully', function(done) {
+          // TODO: uncomment, update parameter values for v2PwsObservationsAll1day call and complete the assertions
           /*
           var stationId = "stationId_example";
           var units = "units_example";
@@ -45,7 +45,7 @@
           var opts = {};
           opts.numericPrecision = "numericPrecision_example";
 
-          instance.observationsAllOneDay(stationId, units, format, opts, function(error, data, response) {
+          instance.v2PwsObservationsAll1day(stationId, units, format, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -184,17 +184,18 @@
           done();
         });
       });
-      describe('observationsCurrent', function() {
-        it('should call observationsCurrent successfully', function(done) {
-          // TODO: uncomment, update parameter values for observationsCurrent call and complete the assertions
+      describe('v2PwsObservationsCurrent', function() {
+        it('should call v2PwsObservationsCurrent successfully', function(done) {
+          // TODO: uncomment, update parameter values for v2PwsObservationsCurrent call and complete the assertions
           /*
+          var xRequestID = "xRequestID_example";
           var stationId = "stationId_example";
           var units = "units_example";
           var format = "json";
           var opts = {};
           opts.numericPrecision = "numericPrecision_example";
 
-          instance.observationsCurrent(stationId, units, format, opts, function(error, data, response) {
+          instance.v2PwsObservationsCurrent(xRequestID, stationId, units, format, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
@@ -333,9 +334,9 @@
           done();
         });
       });
-      describe('observationsHourly7Day', function() {
-        it('should call observationsHourly7Day successfully', function(done) {
-          // TODO: uncomment, update parameter values for observationsHourly7Day call and complete the assertions
+      describe('v2PwsObservationsHourly7day', function() {
+        it('should call v2PwsObservationsHourly7day successfully', function(done) {
+          // TODO: uncomment, update parameter values for v2PwsObservationsHourly7day call and complete the assertions
           /*
           var stationId = "stationId_example";
           var units = "units_example";
@@ -343,7 +344,7 @@
           var opts = {};
           opts.numericPrecision = "numericPrecision_example";
 
-          instance.observationsHourly7Day(stationId, units, format, opts, function(error, data, response) {
+          instance.v2PwsObservationsHourly7day(stationId, units, format, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;

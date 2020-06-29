@@ -4,12 +4,12 @@ All URIs are relative to *https://api.weather.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dailySummary7Day**](PWSDailySummaryApi.md#dailySummary7Day) | **GET** /v2/pws/dailysummary/7day | 
+[**v2PwsDailysummary7day**](PWSDailySummaryApi.md#v2PwsDailysummary7day) | **GET** /v2/pws/dailysummary/7day | 
 
 
-<a name="dailySummary7Day"></a>
-# **dailySummary7Day**
-> InlineResponse2002 dailySummary7Day(stationId, units, format, opts)
+<a name="v2PwsDailysummary7day"></a>
+# **v2PwsDailysummary7day**
+> InlineResponse2002 v2PwsDailysummary7day(stationId, units, format, opts)
 
 
 
@@ -45,7 +45,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.dailySummary7Day(stationId, units, format, opts, callback);
+apiInstance.v2PwsDailysummary7day(stationId, units, format, opts, callback);
 ```
 
 ### Parameters
@@ -68,5 +68,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 

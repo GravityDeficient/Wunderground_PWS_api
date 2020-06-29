@@ -16,29 +16,29 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001'], factory);
+    define(['ApiClient', 'model/InlineResponse2001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2001'));
   } else {
     // Browser globals (root is window)
     if (!root.TheWeatherCompanyPwsApi) {
       root.TheWeatherCompanyPwsApi = {};
     }
-    root.TheWeatherCompanyPwsApi.PWSObservationsApi = factory(root.TheWeatherCompanyPwsApi.ApiClient, root.TheWeatherCompanyPwsApi.InlineResponse200, root.TheWeatherCompanyPwsApi.InlineResponse2001);
+    root.TheWeatherCompanyPwsApi.PWSHistoryApi = factory(root.TheWeatherCompanyPwsApi.ApiClient, root.TheWeatherCompanyPwsApi.InlineResponse2001);
   }
-}(this, function(ApiClient, InlineResponse200, InlineResponse2001) {
+}(this, function(ApiClient, InlineResponse2001) {
   'use strict';
 
   /**
-   * PWSObservations service.
-   * @module api/PWSObservationsApi
+   * PWSHistory service.
+   * @module api/PWSHistoryApi
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new PWSObservationsApi. 
-   * @alias module:api/PWSObservationsApi
+   * Constructs a new PWSHistoryApi. 
+   * @alias module:api/PWSHistoryApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
@@ -48,177 +48,46 @@
 
 
     /**
-     * Callback function to receive the result of the v2PwsObservationsAll1day operation.
-     * @callback module:api/PWSObservationsApi~v2PwsObservationsAll1dayCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Personal Weather Station (PWS) Rapid Historical Observations returns the daily observations records in rapid frequency as frequent as every 5 minutes. Actual frequency of reports ranges and is dependent on how frequently an individual Personal Weather Station (PWS) reports data.
-     * @param {String} stationId The PWS station ID
-     * @param {module:model/String} units Unit type
-     * @param {module:model/String} format 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
-     * @param {module:api/PWSObservationsApi~v2PwsObservationsAll1dayCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
-     */
-    this.v2PwsObservationsAll1day = function(stationId, units, format, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'stationId' is set
-      if (stationId === undefined || stationId === null) {
-        throw new Error("Missing the required parameter 'stationId' when calling v2PwsObservationsAll1day");
-      }
-
-      // verify the required parameter 'units' is set
-      if (units === undefined || units === null) {
-        throw new Error("Missing the required parameter 'units' when calling v2PwsObservationsAll1day");
-      }
-
-      // verify the required parameter 'format' is set
-      if (format === undefined || format === null) {
-        throw new Error("Missing the required parameter 'format' when calling v2PwsObservationsAll1day");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'stationId': stationId,
-        'units': units,
-        'numericPrecision': opts['numericPrecision'],
-        'format': format,
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['APIKeyQueryParam'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/v2/pws/observations/all/1day', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the v2PwsObservationsCurrent operation.
-     * @callback module:api/PWSObservationsApi~v2PwsObservationsCurrentCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Personal Weather Stations (PWS) Current Conditions returns the current conditions observations for the current record.Current record is the last record reported within 60 minutes. If the station has not reported a current conditions in the past 60 minutes, the response will not return an expired observation record (older than 60 minutes); a 'Data Expired' message will be returned instead.
-     * @param {String} xRequestID 
-     * @param {String} stationId The PWS station ID
-     * @param {module:model/String} units Unit type
-     * @param {module:model/String} format 
-     * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
-     * @param {module:api/PWSObservationsApi~v2PwsObservationsCurrentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
-     */
-    this.v2PwsObservationsCurrent = function(xRequestID, stationId, units, format, opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'xRequestID' is set
-      if (xRequestID === undefined || xRequestID === null) {
-        throw new Error("Missing the required parameter 'xRequestID' when calling v2PwsObservationsCurrent");
-      }
-
-      // verify the required parameter 'stationId' is set
-      if (stationId === undefined || stationId === null) {
-        throw new Error("Missing the required parameter 'stationId' when calling v2PwsObservationsCurrent");
-      }
-
-      // verify the required parameter 'units' is set
-      if (units === undefined || units === null) {
-        throw new Error("Missing the required parameter 'units' when calling v2PwsObservationsCurrent");
-      }
-
-      // verify the required parameter 'format' is set
-      if (format === undefined || format === null) {
-        throw new Error("Missing the required parameter 'format' when calling v2PwsObservationsCurrent");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'stationId': stationId,
-        'units': units,
-        'numericPrecision': opts['numericPrecision'],
-        'format': format,
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-        'X-Request-ID': xRequestID
-      };
-      var formParams = {
-      };
-
-      var authNames = ['APIKeyQueryParam'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/v2/pws/observations/current', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the v2PwsObservationsHourly7day operation.
-     * @callback module:api/PWSObservationsApi~v2PwsObservationsHourly7dayCallback
+     * Callback function to receive the result of the v2PwsHistoryAll operation.
+     * @callback module:api/PWSHistoryApi~v2PwsHistoryAllCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Personal Weather Station (PWS) Daily Summary Historical Observations returns the daily summary of daily observations for each day's observations report.
+     * Personal Weather Stations (PWS) Historical Data returns the historical PWS data for a single date, returning hourly data, summary data for the entire day, or both.
      * @param {String} stationId The PWS station ID
+     * @param {Number} _date The date parameter is used to call the specific date request, using format “YYYYMMDD”
      * @param {module:model/String} units Unit type
      * @param {module:model/String} format 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
-     * @param {module:api/PWSObservationsApi~v2PwsObservationsHourly7dayCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PWSHistoryApi~v2PwsHistoryAllCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2001}
      */
-    this.v2PwsObservationsHourly7day = function(stationId, units, format, opts, callback) {
+    this.v2PwsHistoryAll = function(stationId, _date, units, format, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'stationId' is set
       if (stationId === undefined || stationId === null) {
-        throw new Error("Missing the required parameter 'stationId' when calling v2PwsObservationsHourly7day");
+        throw new Error("Missing the required parameter 'stationId' when calling v2PwsHistoryAll");
+      }
+
+      // verify the required parameter '_date' is set
+      if (_date === undefined || _date === null) {
+        throw new Error("Missing the required parameter '_date' when calling v2PwsHistoryAll");
       }
 
       // verify the required parameter 'units' is set
       if (units === undefined || units === null) {
-        throw new Error("Missing the required parameter 'units' when calling v2PwsObservationsHourly7day");
+        throw new Error("Missing the required parameter 'units' when calling v2PwsHistoryAll");
       }
 
       // verify the required parameter 'format' is set
       if (format === undefined || format === null) {
-        throw new Error("Missing the required parameter 'format' when calling v2PwsObservationsHourly7day");
+        throw new Error("Missing the required parameter 'format' when calling v2PwsHistoryAll");
       }
 
 
@@ -226,6 +95,7 @@
       };
       var queryParams = {
         'stationId': stationId,
+        'date': _date,
         'units': units,
         'numericPrecision': opts['numericPrecision'],
         'format': format,
@@ -243,7 +113,151 @@
       var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
-        '/v2/pws/observations/hourly/7day', 'GET',
+        '/v2/pws/history/all', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the v2PwsHistoryDaily operation.
+     * @callback module:api/PWSHistoryApi~v2PwsHistoryDailyCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Personal Weather Stations (PWS) Historical Data returns the historical PWS data for a single date, returning summary data for the entire day.
+     * @param {String} stationId The PWS station ID
+     * @param {Number} _date The date parameter is used to call the specific date request, using format “YYYYMMDD”
+     * @param {module:model/String} units Unit type
+     * @param {module:model/String} format 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
+     * @param {module:api/PWSHistoryApi~v2PwsHistoryDailyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2001}
+     */
+    this.v2PwsHistoryDaily = function(stationId, _date, units, format, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'stationId' is set
+      if (stationId === undefined || stationId === null) {
+        throw new Error("Missing the required parameter 'stationId' when calling v2PwsHistoryDaily");
+      }
+
+      // verify the required parameter '_date' is set
+      if (_date === undefined || _date === null) {
+        throw new Error("Missing the required parameter '_date' when calling v2PwsHistoryDaily");
+      }
+
+      // verify the required parameter 'units' is set
+      if (units === undefined || units === null) {
+        throw new Error("Missing the required parameter 'units' when calling v2PwsHistoryDaily");
+      }
+
+      // verify the required parameter 'format' is set
+      if (format === undefined || format === null) {
+        throw new Error("Missing the required parameter 'format' when calling v2PwsHistoryDaily");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'stationId': stationId,
+        'date': _date,
+        'units': units,
+        'numericPrecision': opts['numericPrecision'],
+        'format': format,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['APIKeyQueryParam'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = InlineResponse2001;
+
+      return this.apiClient.callApi(
+        '/v2/pws/history/daily', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the v2PwsHistoryHourly operation.
+     * @callback module:api/PWSHistoryApi~v2PwsHistoryHourlyCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Personal Weather Stations (PWS) Historical Data returns the historical PWS data for a single date, returning hourly data.
+     * @param {String} stationId The PWS station ID
+     * @param {Number} _date The date parameter is used to call the specific date request, using format “YYYYMMDD”
+     * @param {module:model/String} units Unit type
+     * @param {module:model/String} format 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
+     * @param {module:api/PWSHistoryApi~v2PwsHistoryHourlyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2001}
+     */
+    this.v2PwsHistoryHourly = function(stationId, _date, units, format, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'stationId' is set
+      if (stationId === undefined || stationId === null) {
+        throw new Error("Missing the required parameter 'stationId' when calling v2PwsHistoryHourly");
+      }
+
+      // verify the required parameter '_date' is set
+      if (_date === undefined || _date === null) {
+        throw new Error("Missing the required parameter '_date' when calling v2PwsHistoryHourly");
+      }
+
+      // verify the required parameter 'units' is set
+      if (units === undefined || units === null) {
+        throw new Error("Missing the required parameter 'units' when calling v2PwsHistoryHourly");
+      }
+
+      // verify the required parameter 'format' is set
+      if (format === undefined || format === null) {
+        throw new Error("Missing the required parameter 'format' when calling v2PwsHistoryHourly");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'stationId': stationId,
+        'date': _date,
+        'units': units,
+        'numericPrecision': opts['numericPrecision'],
+        'format': format,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['APIKeyQueryParam'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = InlineResponse2001;
+
+      return this.apiClient.callApi(
+        '/v2/pws/history/hourly', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

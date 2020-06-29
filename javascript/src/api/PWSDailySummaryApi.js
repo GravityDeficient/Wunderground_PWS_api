@@ -48,8 +48,8 @@
 
 
     /**
-     * Callback function to receive the result of the dailySummary7Day operation.
-     * @callback module:api/PWSDailySummaryApi~dailySummary7DayCallback
+     * Callback function to receive the result of the v2PwsDailysummary7day operation.
+     * @callback module:api/PWSDailySummaryApi~v2PwsDailysummary7dayCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -62,26 +62,26 @@
      * @param {module:model/String} format 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.numericPrecision Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used.
-     * @param {module:api/PWSDailySummaryApi~dailySummary7DayCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PWSDailySummaryApi~v2PwsDailysummary7dayCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2002}
      */
-    this.dailySummary7Day = function(stationId, units, format, opts, callback) {
+    this.v2PwsDailysummary7day = function(stationId, units, format, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'stationId' is set
       if (stationId === undefined || stationId === null) {
-        throw new Error("Missing the required parameter 'stationId' when calling dailySummary7Day");
+        throw new Error("Missing the required parameter 'stationId' when calling v2PwsDailysummary7day");
       }
 
       // verify the required parameter 'units' is set
       if (units === undefined || units === null) {
-        throw new Error("Missing the required parameter 'units' when calling dailySummary7Day");
+        throw new Error("Missing the required parameter 'units' when calling v2PwsDailysummary7day");
       }
 
       // verify the required parameter 'format' is set
       if (format === undefined || format === null) {
-        throw new Error("Missing the required parameter 'format' when calling dailySummary7Day");
+        throw new Error("Missing the required parameter 'format' when calling v2PwsDailysummary7day");
       }
 
 
@@ -102,7 +102,7 @@
 
       var authNames = ['APIKeyQueryParam'];
       var contentTypes = [];
-      var accepts = ['application/json'];
+      var accepts = [];
       var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(

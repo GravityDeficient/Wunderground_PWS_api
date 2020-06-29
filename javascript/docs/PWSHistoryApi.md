@@ -1,21 +1,21 @@
-# TheWeatherCompanyPwsApi.PWSObservationsApi
+# TheWeatherCompanyPwsApi.PWSHistoryApi
 
 All URIs are relative to *https://api.weather.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2PwsObservationsAll1day**](PWSObservationsApi.md#v2PwsObservationsAll1day) | **GET** /v2/pws/observations/all/1day | 
-[**v2PwsObservationsCurrent**](PWSObservationsApi.md#v2PwsObservationsCurrent) | **GET** /v2/pws/observations/current | 
-[**v2PwsObservationsHourly7day**](PWSObservationsApi.md#v2PwsObservationsHourly7day) | **GET** /v2/pws/observations/hourly/7day | 
+[**v2PwsHistoryAll**](PWSHistoryApi.md#v2PwsHistoryAll) | **GET** /v2/pws/history/all | 
+[**v2PwsHistoryDaily**](PWSHistoryApi.md#v2PwsHistoryDaily) | **GET** /v2/pws/history/daily | 
+[**v2PwsHistoryHourly**](PWSHistoryApi.md#v2PwsHistoryHourly) | **GET** /v2/pws/history/hourly | 
 
 
-<a name="v2PwsObservationsAll1day"></a>
-# **v2PwsObservationsAll1day**
-> InlineResponse200 v2PwsObservationsAll1day(stationId, units, format, opts)
+<a name="v2PwsHistoryAll"></a>
+# **v2PwsHistoryAll**
+> InlineResponse2001 v2PwsHistoryAll(stationId, _date, units, format, opts)
 
 
 
-Personal Weather Station (PWS) Rapid Historical Observations returns the daily observations records in rapid frequency as frequent as every 5 minutes. Actual frequency of reports ranges and is dependent on how frequently an individual Personal Weather Station (PWS) reports data.
+Personal Weather Stations (PWS) Historical Data returns the historical PWS data for a single date, returning hourly data, summary data for the entire day, or both.
 
 ### Example
 ```javascript
@@ -28,9 +28,11 @@ APIKeyQueryParam.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKeyQueryParam.apiKeyPrefix = 'Token';
 
-var apiInstance = new TheWeatherCompanyPwsApi.PWSObservationsApi();
+var apiInstance = new TheWeatherCompanyPwsApi.PWSHistoryApi();
 
 var stationId = "stationId_example"; // String | The PWS station ID
+
+var _date = 56; // Number | The date parameter is used to call the specific date request, using format “YYYYMMDD”
 
 var units = "units_example"; // String | Unit type
 
@@ -47,7 +49,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v2PwsObservationsAll1day(stationId, units, format, opts, callback);
+apiInstance.v2PwsHistoryAll(stationId, _date, units, format, opts, callback);
 ```
 
 ### Parameters
@@ -55,13 +57,14 @@ apiInstance.v2PwsObservationsAll1day(stationId, units, format, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stationId** | **String**| The PWS station ID | 
+ **_date** | **Number**| The date parameter is used to call the specific date request, using format “YYYYMMDD” | 
  **units** | **String**| Unit type | 
  **format** | **String**|  | [default to json]
  **numericPrecision** | **String**| Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used. | [optional] 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -72,13 +75,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="v2PwsObservationsCurrent"></a>
-# **v2PwsObservationsCurrent**
-> InlineResponse200 v2PwsObservationsCurrent(xRequestID, stationId, units, format, opts)
+<a name="v2PwsHistoryDaily"></a>
+# **v2PwsHistoryDaily**
+> InlineResponse2001 v2PwsHistoryDaily(stationId, _date, units, format, opts)
 
 
 
-Personal Weather Stations (PWS) Current Conditions returns the current conditions observations for the current record.Current record is the last record reported within 60 minutes. If the station has not reported a current conditions in the past 60 minutes, the response will not return an expired observation record (older than 60 minutes); a 'Data Expired' message will be returned instead.
+Personal Weather Stations (PWS) Historical Data returns the historical PWS data for a single date, returning summary data for the entire day.
 
 ### Example
 ```javascript
@@ -91,11 +94,11 @@ APIKeyQueryParam.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKeyQueryParam.apiKeyPrefix = 'Token';
 
-var apiInstance = new TheWeatherCompanyPwsApi.PWSObservationsApi();
-
-var xRequestID = "xRequestID_example"; // String | 
+var apiInstance = new TheWeatherCompanyPwsApi.PWSHistoryApi();
 
 var stationId = "stationId_example"; // String | The PWS station ID
+
+var _date = 56; // Number | The date parameter is used to call the specific date request, using format “YYYYMMDD”
 
 var units = "units_example"; // String | Unit type
 
@@ -112,22 +115,22 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v2PwsObservationsCurrent(xRequestID, stationId, units, format, opts, callback);
+apiInstance.v2PwsHistoryDaily(stationId, _date, units, format, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xRequestID** | **String**|  | 
  **stationId** | **String**| The PWS station ID | 
+ **_date** | **Number**| The date parameter is used to call the specific date request, using format “YYYYMMDD” | 
  **units** | **String**| Unit type | 
  **format** | **String**|  | [default to json]
  **numericPrecision** | **String**| Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used. | [optional] 
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -138,13 +141,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="v2PwsObservationsHourly7day"></a>
-# **v2PwsObservationsHourly7day**
-> InlineResponse2001 v2PwsObservationsHourly7day(stationId, units, format, opts)
+<a name="v2PwsHistoryHourly"></a>
+# **v2PwsHistoryHourly**
+> InlineResponse2001 v2PwsHistoryHourly(stationId, _date, units, format, opts)
 
 
 
-Personal Weather Station (PWS) Daily Summary Historical Observations returns the daily summary of daily observations for each day's observations report.
+Personal Weather Stations (PWS) Historical Data returns the historical PWS data for a single date, returning hourly data.
 
 ### Example
 ```javascript
@@ -157,9 +160,11 @@ APIKeyQueryParam.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKeyQueryParam.apiKeyPrefix = 'Token';
 
-var apiInstance = new TheWeatherCompanyPwsApi.PWSObservationsApi();
+var apiInstance = new TheWeatherCompanyPwsApi.PWSHistoryApi();
 
 var stationId = "stationId_example"; // String | The PWS station ID
+
+var _date = 56; // Number | The date parameter is used to call the specific date request, using format “YYYYMMDD”
 
 var units = "units_example"; // String | Unit type
 
@@ -176,7 +181,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.v2PwsObservationsHourly7day(stationId, units, format, opts, callback);
+apiInstance.v2PwsHistoryHourly(stationId, _date, units, format, opts, callback);
 ```
 
 ### Parameters
@@ -184,6 +189,7 @@ apiInstance.v2PwsObservationsHourly7day(stationId, units, format, opts, callback
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stationId** | **String**| The PWS station ID | 
+ **_date** | **Number**| The date parameter is used to call the specific date request, using format “YYYYMMDD” | 
  **units** | **String**| Unit type | 
  **format** | **String**|  | [default to json]
  **numericPrecision** | **String**| Optional parameter.  Set to ‘decimal’ to ensure data is returned in decimal format when needed. Will return integers if this value is not used. | [optional] 

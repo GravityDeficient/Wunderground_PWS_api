@@ -50,11 +50,11 @@ command above from.
 #### git
 #
 If the library is hosted at a git repository, e.g.
-https://github.com/GravityDeficient/the_weather_company_pws_api
+https://github.com/YOUR_USERNAME/the_weather_company_pws_api
 then install it via:
 
 ```shell
-    npm install GravityDeficient/the_weather_company_pws_api --save
+    npm install YOUR_USERNAME/the_weather_company_pws_api --save
 ```
 
 ### For browser
@@ -122,7 +122,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.dailySummary7Day(stationId, units, format, opts, callback);
+api.v2PwsDailysummary7day(stationId, units, format, opts, callback);
 
 ```
 
@@ -132,10 +132,13 @@ All URIs are relative to *https://api.weather.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*TheWeatherCompanyPwsApi.PWSDailySummaryApi* | [**dailySummary7Day**](docs/PWSDailySummaryApi.md#dailySummary7Day) | **GET** /v2/pws/dailysummary/7day | 
-*TheWeatherCompanyPwsApi.PWSObservationsApi* | [**observationsAllOneDay**](docs/PWSObservationsApi.md#observationsAllOneDay) | **GET** /v2/pws/observations/all/1day | 
-*TheWeatherCompanyPwsApi.PWSObservationsApi* | [**observationsCurrent**](docs/PWSObservationsApi.md#observationsCurrent) | **GET** /v2/pws/observations/current | 
-*TheWeatherCompanyPwsApi.PWSObservationsApi* | [**observationsHourly7Day**](docs/PWSObservationsApi.md#observationsHourly7Day) | **GET** /v2/pws/observations/hourly/7day | 
+*TheWeatherCompanyPwsApi.PWSDailySummaryApi* | [**v2PwsDailysummary7day**](docs/PWSDailySummaryApi.md#v2PwsDailysummary7day) | **GET** /v2/pws/dailysummary/7day | 
+*TheWeatherCompanyPwsApi.PWSHistoryApi* | [**v2PwsHistoryAll**](docs/PWSHistoryApi.md#v2PwsHistoryAll) | **GET** /v2/pws/history/all | 
+*TheWeatherCompanyPwsApi.PWSHistoryApi* | [**v2PwsHistoryDaily**](docs/PWSHistoryApi.md#v2PwsHistoryDaily) | **GET** /v2/pws/history/daily | 
+*TheWeatherCompanyPwsApi.PWSHistoryApi* | [**v2PwsHistoryHourly**](docs/PWSHistoryApi.md#v2PwsHistoryHourly) | **GET** /v2/pws/history/hourly | 
+*TheWeatherCompanyPwsApi.PWSObservationsApi* | [**v2PwsObservationsAll1day**](docs/PWSObservationsApi.md#v2PwsObservationsAll1day) | **GET** /v2/pws/observations/all/1day | 
+*TheWeatherCompanyPwsApi.PWSObservationsApi* | [**v2PwsObservationsCurrent**](docs/PWSObservationsApi.md#v2PwsObservationsCurrent) | **GET** /v2/pws/observations/current | 
+*TheWeatherCompanyPwsApi.PWSObservationsApi* | [**v2PwsObservationsHourly7day**](docs/PWSObservationsApi.md#v2PwsObservationsHourly7day) | **GET** /v2/pws/observations/hourly/7day | 
 
 
 ## Documentation for Models

@@ -35,9 +35,9 @@
 
   describe('(package)', function() {
     describe('PWSDailySummaryApi', function() {
-      describe('dailySummary7Day', function() {
-        it('should call dailySummary7Day successfully', function(done) {
-          // TODO: uncomment, update parameter values for dailySummary7Day call and complete the assertions
+      describe('v2PwsDailysummary7day', function() {
+        it('should call v2PwsDailysummary7day successfully', function(done) {
+          // TODO: uncomment, update parameter values for v2PwsDailysummary7day call and complete the assertions
           /*
           var stationId = "stationId_example";
           var units = "units_example";
@@ -45,7 +45,7 @@
           var opts = {};
           opts.numericPrecision = "numericPrecision_example";
 
-          instance.dailySummary7Day(stationId, units, format, opts, function(error, data, response) {
+          instance.v2PwsDailysummary7day(stationId, units, format, opts, function(error, data, response) {
             if (error) {
               done(error);
               return;
